@@ -34,3 +34,7 @@ docker-push:
 .PHONY: test-unit
 test-unit:
 	${ROOT_DIR}/openshift/unit-tests.sh
+
+.PHONY: replace-upstream-files
+replace-upstream-files:
+	cat ${ROOT_DIR}/openshift/generated.preamble ${ROOT_DIR}/openshift/Dockerfile.dockerignore > ${ROOT_DIR}/.dockerignore
